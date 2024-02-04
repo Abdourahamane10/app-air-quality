@@ -13,7 +13,7 @@ body {
   position: relative;
   background-image: linear-gradient(45deg, #4ba0d9, #6dd5fa, #fff);
   opacity: 0;
-  animation: fadeIn 2s ease-out forwards;
+  animation: fadeIn 1s ease-out forwards;
 }
 
 @keyframes fadeIn {
@@ -22,7 +22,7 @@ body {
   }
 }
 
-.backgroundLayer {
+.background-layer {
   width: 100%;
   height: 100%;
   position: absolute;
@@ -56,6 +56,7 @@ h1 {
   box-shadow: 0 5px 5px rgba(0, 0, 0, 0.3);
   padding: 25px 25px 50px;
   border-radius: 5px;
+  position: relative;
 }
 
 .user-information {
@@ -102,6 +103,13 @@ td {
 .loader-logo {
   width: 75px;
   object-fit: cover;
+  animation: loader 1.8s ease-out infinite;
+}
+
+@keyframes loader {
+  50% {
+    transform: rotate(360deg);
+  }
 }
 
 .loader {
@@ -109,10 +117,20 @@ td {
   justify-content: center;
   align-items: center;
   background-color: inherit;
+  border-radius: 5px;
   position: absolute;
   z-index: 1;
   inset: 0;
   opacity: 0;
+  visibility: hidden;
+  transition: 
+  opacity 0.2s ease-out, 
+  visibility 0.2s ease-out;
+}
+
+.loader.active {
+  opacity: 1;
+  visibility: visible;
 }
 
 .scale-container {
@@ -132,7 +150,7 @@ td {
   object-fit: cover;
   position: absolute;
   left: -15px;
-  top: 15px;
+  margin-top: 15px;
   transform: rotate(180deg);
   transition: transform 0.4s ease-out;
 }
