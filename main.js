@@ -72,7 +72,7 @@ const pollutionScale = [
     }
   }
 
-  getDataPollution("http://api.airvisual.com/v2/nearest_city?key=0b965519-378f-4de1-ab3e-c725ecedead3");
+  getDataPollution("https://api.airvisual.com/v2/nearest_city?key=0b965519-378f-4de1-ab3e-c725ecedead3");
 
   function populateUI(data){
     console.log(data);
